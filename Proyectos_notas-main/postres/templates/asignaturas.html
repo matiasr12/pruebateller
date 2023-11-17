@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Materias</title>
+</head>
+<body>
+    <h1>Lista de Materias</h1>
+    
+    <ul>
+        {% for materia, datos in materias.items %}
+            <li>{{ materia }}</li>
+            <ul>
+                {% for campo, valor in datos.items %}
+                    <li>{{ campo }}: {{ valor }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>

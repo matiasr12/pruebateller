@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Notas</title>
+</head>
+<body>
+    <h1>Editar Notas</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="accion" value="editar">
+        <input type="hidden" name="nota_id" value="{{ nota_id }}">
+
+        <label for="apoderado_id">Apoderado:</label>
+        <input type="text" name="apoderado_id" value="{{ apoderado_id }}" required>
+        <br>
+
+        <label for="asignatura_id">Asignatura:</label>
+        <input type="text" name="asignatura_id" value="{{ asignatura_id }}" required>
+        <br>
+
+        <label for="curso_id">Curso:</label>
+        <input type="text" name="curso_id" value="{{ curso_id }}" required>
+        <br>
+
+        <label for="nota">Nota:</label>
+        <input type="text" name="nota" value="{{ nota }}" required>
+        <br>
+
+        <label for="usuario_id">Usuario:</label>
+        <input type="text" name="usuario_id" value="{{ usuario_id }}" required>
+        <br>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+
+    <a href="{% url 'notasedit' %}">Volver a la lista de notas</a>
+</body>
+</html>

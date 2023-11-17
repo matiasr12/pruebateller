@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perfil del Profesor</title>
+    <style>
+        /* Estilos CSS para dar formato a la barra de navegación */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3d32321f; /* Color de fondo de la barra de navegación */
+        }
+
+        ul.navbar li {
+            float: right; /* Cambiado a float: right para alinear a la derecha */
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #444; /* Color de fondo al pasar el cursor por encima del enlace */
+        }
+
+        /* Estilos CSS para los botones del perfil */
+        .botones-perfil {
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(0, 123, 255, 0.5); /* Color azul transparente */
+            padding: 10px; /* Añadido para mejorar el espaciado */
+        }
+
+        /* Estilos para el enlace del botón */
+        .enlace-boton {
+            text-decoration: none;
+        }
+
+        /* Estilos para el contenedor del botón con imagen y texto */
+        .boton-con-imagen {
+            display: inline-block;
+            text-align: center; /* Centra el contenido del contenedor */
+            margin: 10px;
+        }
+
+        /* Estilos para la imagen dentro del botón */
+        .icono-boton {
+            width: 50px; /* Ajusta el tamaño según tus preferencias */
+            height: 50px; /* Ajusta el tamaño según tus preferencias */
+            margin-bottom: 5px; /* Espacio entre la imagen y el texto */
+        }
+
+        /* Agregar imagen de fondo solo al body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/imagenes/img2.jpg'); /* Cambia 'tu_ruta_de_imagen.jpg' con la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative; /* Añadido para posicionar correctamente la barra de contacto */
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center; /* Centra el título */
+        }
+
+        /* Estilos para la barra de contacto y redes sociales */
+        .barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        /* Estilos para los iconos de redes sociales */
+        .red-social img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px; /* Añadido margen derecho para separar las imágenes */
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="navbar">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Home</a></li> <!-- Cambiado el orden para que aparezca a la derecha -->
+
+
+    </ul>
+    <br>
+    <br>
+    <br>
+
+    <h1>Perfil del Profesor</h1>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="botones-perfil">
+        <a href="{% url 'guardar_nota' %}" class="enlace-boton">
+            <div class="boton-con-imagen">
+                <img src="/static/imagenes/a.png" alt="Icono de Notas" class="icono-boton">
+                <br>
+                Notas
+            </div>
+        </a>
+        <a href="{% url 'subir_archivo' %}" class="enlace-boton">
+            <div class="boton-con-imagen">
+                <img src="/static/imagenes/Captura.png" alt="Icono de Actividades" class="icono-boton">
+                <br>
+                Actividades
+            </div>
+        </a>
+        <a href="{% url 'guardar_anotacion' %}" class="enlace-boton">
+            <div class="boton-con-imagen">
+                <img src="/static/imagenes/Captura1.png" alt="Icono de Anotaciones" class="icono-boton">
+                <br>
+                Anotaciones
+            </div>
+        </a>
+       
+    </div>
+
+    <!-- Barra de contacto y redes sociales -->
+    <div class="barra-contacto">
+        <div>Contacto: ejemplo@correo.com | Teléfono: +123 456 7890</div>
+        <div>Nuestras Redes Sociales:
+            <a href="#" class="red-social"><img src="/static/imagenes/face.png" alt="Facebook"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/x.png" alt="Twitter"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/insta.png" alt="Instagram"></a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Asuntos Estudiantiles</title>
+    <style>
+        /* Estilos CSS para dar formato a la barra de navegación */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3d32321f; /* Color de fondo de la barra de navegación */
+        }
+
+        ul.navbar li {
+            float: right; /* Cambiado a float: right para alinear a la derecha */
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #444; /* Color de fondo al pasar el cursor por encima del enlace */
+        }
+
+        /* Estilos CSS para los botones del perfil */
+        .botones-perfil {
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(0, 123, 255, 0.5); /* Color azul transparente */
+            padding: 10px; /* Añadido para mejorar el espaciado */
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .boton:hover {
+            background-color: #0056b3;
+        }
+
+        /* Agregar imagen de fondo solo al body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/imagenes/img2.jpg'); /* Cambia 'tu_ruta_de_imagen.jpg' con la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative; /* Añadido para posicionar correctamente la barra de contacto */
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Estilos para la barra de contacto y redes sociales */
+        .barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        .red-social {
+            margin-left: 10px; /* Espaciado entre los iconos de redes sociales */
+        }
+
+        ul.notas-list {
+            list-style-type: none;
+            padding: 0;
+            width: 60%; /* Ancho del contenedor de la lista */
+            margin: 0 auto; /* Margen automático en el eje horizontal para centrar */
+        }
+
+        ul.notas-list li {
+            background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con opacidad para mejorar la legibilidad del texto */
+            margin-bottom: 10px; /* Margen inferior entre elementos */
+            padding: 10px; /* Relleno interno de cada elemento */
+            border: 1px solid #ccc; /* Borde alrededor de cada elemento */
+            border-radius: 5px; /* Bordes redondeados */
+            /* text-shadow: 2px 2px 2px black; */ /* Quitar sombra del texto */
+        }
+
+        /* Estilos adicionales para la lista de archivos */
+        ul.archivos-list {
+            list-style-type: none;
+            padding: 0;
+            width: 60%;
+            margin: 20px auto; /* Añadido margen superior e inferior para separar del contenido circundante */
+        }
+
+        ul.archivos-list li {
+            background-color: #f4f4f4; /* Fondo gris claro */
+            margin-bottom: 10px;
+            padding: 15px; /* Mayor relleno interno para un diseño más cuadrado */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden; /* Evita que el contenido sobresalga del cuadro */
+        }
+
+        ul.archivos-list li p {
+            margin: 0; /* Elimina el margen superior e inferior del párrafo */
+        }
+
+        ul.archivos-list li a {
+            display: block;
+            margin-top: 10px; /* Espacio entre el párrafo y el enlace */
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        ul.archivos-list li a:hover {
+            background-color: #0056b3;
+        }
+
+        
+.barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        .red-social img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px; /* Añadido margen derecho para separar las imágenes */
+        }
+
+        ul.notas-list {
+            list-style-type: none;
+            padding: 0;
+            width: 60%; /* Ancho del contenedor de la lista */
+            margin: 0 auto; /* Margen automático en el eje horizontal para centrar */
+        }
+
+        ul.notas-list li {
+            background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con opacidad para mejorar la legibilidad del texto */
+            margin-bottom: 10px; /* Margen inferior entre elementos */
+            padding: 10px; /* Relleno interno de cada elemento */
+            border: 1px solid #ccc; /* Borde alrededor de cada elemento */
+            border-radius: 5px; /* Bordes redondeados */
+            /* text-shadow: 2px 2px 2px black; */ /* Quitar sombra del texto */
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Barra de navegación -->
+    <ul class="navbar">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="{% url 'apoderados' %}">Home</a></li>
+    </ul>
+
+    <!-- Contenido del perfil del alumno -->
+    <br>
+    <br>
+
+    <h1>Asuntos Estudiantiles </h1>
+    <div>
+        <ul class="archivos-list">
+            {% for archivo in archivos %}
+            <li>
+                <p>{{ archivo.nombre|cut:"archivo/" }}</p>
+                <a href="{{ archivo.url }}" target="_blank">Descargar archivo</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Barra de contacto y redes sociales -->
+    <div class="barra-contacto">
+        <div>Contacto: ejemplo@correo.com | Teléfono: +123 456 7890</div>
+        <div>Nuestras Redes Sociales:
+            <a href="#" class="red-social"><img src="/static/imagenes/face.png" alt="Facebook"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/x.png" alt="Twitter"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/insta.png" alt="Instagram"></a>
+        </div>
+    </div>
+</body>
+
+</html>

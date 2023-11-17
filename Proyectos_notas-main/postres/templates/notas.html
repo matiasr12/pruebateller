@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Anotaciones</title>
+    <style>
+        body {
+            background-image: url('/static/imagenes/img2.jpg'); /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos para la barra de navegación */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3d32321f; /* Color de fondo de la barra de navegación */
+        }
+
+        ul.navbar li {
+            float: right; /* Cambiado a float: right para alinear a la derecha */
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #444; /* Color de fondo al pasar el cursor por encima del enlace */
+        }
+
+
+        /* Estilos para el cuadro de registro */
+        .registro-box {
+            float: left;
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .registro-box label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .registro-box select,
+        .registro-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .registro-box input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .registro-box input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        /* Estilos para los iconos de redes sociales */
+        .red-social img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px; /* Añadido margen derecho para separar las imágenes */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<ul class="navbar">
+    <li><a href="#">Contacto</a></li>
+    <li><a href="{% url 'profesor' %}">Home</a></li>
+</ul>
+
+<div class="registro-box">
+    <h1>Registro de Anotaciones</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="usuario">Selecciona un usuario:</label>
+        <select name="usuario" id="usuario">
+            {% for user in usuarios %}
+                <option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="apoderado">Selecciona un apoderado:</label>
+        <select name="apoderado" id="apoderado">
+            {% for apoderado in apoderados %}
+                <option value="{{ apoderado.id }}">
+                    {{ apoderado.nombreap|upper }} {{ apoderado.apellidoap|upper }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label for="curso">Selecciona un curso:</label>
+        <select name="curso" id="curso">
+            {% for curso in curso %}
+                <option value="{{ curso.id }}">{{ curso.data }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="asignatura">Selecciona una asignatura:</label>
+        <select name="asignatura" id="asignatura">
+            {% for asignatura in asignaturas %}
+                <option value="{{ asignatura.id }}">{{ asignatura.data }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="nota">Ingresa la nota:</label>
+        <input type="text" name="nota" id="nota" placeholder="Escribe la nota">
+        
+        <input type="submit" value="Guardar Anotación">
+        <a href="{% url 'gestionar_notas' %}">Editar Nota</a>
+    </form>
+</div>
+
+
+
+
+
+   <!-- Barra de contacto y redes sociales -->
+   <div class="barra-contacto">
+    <div>Contacto: ejemplo@correo.com | Teléfono: +123 456 7890</div>
+    <div>Nuestras Redes Sociales:
+        <a href="#" class="red-social"><img src="/static/imagenes/face.png" alt="Facebook"></a>
+        <a href="#" class="red-social"><img src="/static/imagenes/x.png" alt="Twitter"></a>
+        <a href="#" class="red-social"><img src="/static/imagenes/insta.png" alt="Instagram"></a>
+    </div>
+</div>
+
+<!-- Contenido principal de la página -->
+
+
+
+</body>
+</html>

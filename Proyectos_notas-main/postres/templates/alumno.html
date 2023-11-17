@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perfil del Alumno</title>
+    <style>
+        /* Estilos CSS para dar formato a la barra de navegación */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3d32321f; /* Color de fondo de la barra de navegación */
+        }
+
+        ul.navbar li {
+            float: right; /* Cambiado a float: right para alinear a la derecha */
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #444; /* Color de fondo al pasar el cursor por encima del enlace */
+        }
+
+        /* Estilos CSS para los botones del perfil */
+        .botones-perfil {
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(0, 123, 255, 0.5); /* Color azul transparente */
+            padding: 10px; /* Añadido para mejorar el espaciado */
+        }
+
+        .boton-container {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .boton img {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .boton span {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Agregar imagen de fondo solo al body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/imagenes/img2.jpg'); /* Cambia 'tu_ruta_de_imagen.jpg' con la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative; /* Añadido para posicionar correctamente la barra de contacto */
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center; /* Centra el texto del perfil */
+        }
+
+        /* Estilos para la barra de contacto y redes sociales */
+        .barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        /* Estilos para los iconos de redes sociales */
+        .red-social img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px; /* Añadido margen derecho para separar las imágenes */
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="navbar">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Home</a></li> <!-- Cambiado el orden para que aparezca a la derecha -->
+    </ul>
+
+    <h1>Perfil del Alumno</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="botones-perfil">
+        <div class="boton-container">
+            <a href="{% url 'notasal' %}" class="boton">
+                <img src="/static/imagenes/Captura.png" alt="Icono de Notas">
+                <span>Notas</span>
+            </a>
+        </div>
+
+        <div class="boton-container">
+            <a href="{% url 'actividades' %}" class="boton">
+                <img src="/static/imagenes/Captura1.png" alt="Icono de Actividades">
+                <span>Actividades</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Barra de contacto y redes sociales -->
+    <div class="barra-contacto">
+        <div>Contacto: ejemplo@correo.com | Teléfono: +123 456 7890</div>
+        <div>Nuestras Redes Sociales:
+            <a href="#" class="red-social"><img src="/static/imagenes/face.png" alt="Facebook"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/x.png" alt="Twitter"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/insta.png" alt="Instagram"></a>
+        </div>
+    </div>
+</body>
+
+</html>

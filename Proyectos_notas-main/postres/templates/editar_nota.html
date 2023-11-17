@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perfil del eliminar notas</title>
+    <style>
+        /* Estilos CSS para dar formato a la barra de navegación */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3d32321f; /* Color de fondo de la barra de navegación */
+        }
+
+        ul.navbar li {
+            float: right; /* Cambiado a float: right para alinear a la derecha */
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #444; /* Color de fondo al pasar el cursor por encima del enlace */
+        }
+
+        /* Estilos CSS para los botones del perfil */
+        .botones-perfil {
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(0, 123, 255, 0.5); /* Color azul transparente */
+            padding: 10px; /* Añadido para mejorar el espaciado */
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .boton:hover {
+            background-color: #0056b3;
+        }
+
+        /* Agregar imagen de fondo solo al body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/imagenes/img2.jpg'); /* Cambia 'tu_ruta_de_imagen.jpg' con la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative; /* Añadido para posicionar correctamente la barra de contacto */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para la barra de contacto y redes sociales */
+        .barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        .red-social {
+            margin-left: 10px; /* Espaciado entre los iconos de redes sociales */
+        }
+
+        /* Estilos para la sección de gestionar notas */
+        .gestionar-notas {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px; /* Añadido margen superior para separar de la barra de navegación */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .acciones {
+            text-align: center;
+        }
+
+        /* Estilos para el botón de eliminar */
+        .eliminar-boton {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .eliminar-boton:hover {
+            background-color: #c82333;
+        }
+
+        .barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        .red-social img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px; /* Añadido margen derecho para separar las imágenes */
+        }
+
+        ul.notas-list {
+            list-style-type: none;
+            padding: 0;
+            width: 60%; /* Ancho del contenedor de la lista */
+            margin: 0 auto; /* Margen automático en el eje horizontal para centrar */
+        }
+
+        ul.notas-list li {
+            background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con opacidad para mejorar la legibilidad del texto */
+            margin-bottom: 10px; /* Margen inferior entre elementos */
+            padding: 10px; /* Relleno interno de cada elemento */
+            border: 1px solid #ccc; /* Borde alrededor de cada elemento */
+            border-radius: 5px; /* Bordes redondeados */
+            /* text-shadow: 2px 2px 2px black; */ /* Quitar sombra del texto */
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="navbar">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="{% url 'profesor' %}">Home</a></li>
+    </ul>
+
+    <div class="gestionar-notas">
+        {% block content %}
+        <h2>Gestionar Notas</h2>
+
+        <table>
+            
+            <tbody>
+
+                <div>
+
+                    {% for nota in notas_data %}
+                
+                    <!-- Agrega esta sección para mostrar los detalles de la nota -->
+                    <tr>
+                        <td colspan="5"
+                            style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                            <strong>Detalles de la Nota:</strong><br>
+                            Usuario: {{ nota.usuario.first_name }} {{ nota.usuario.last_name }}<br>
+                            Apoderado: {{ nota.apoderado.nombreap }} {{ nota.apoderado.apellidoap }}<br>
+                            Curso: {{ nota.curso.nombre_curso }}<br>
+                            Asignatura: {{ nota.asignatura.nombre_asignatura }}b <br>
+                            nota: {{ nota.data.nota }}
+
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="acciones">
+                            <!-- Agregado botón de eliminar debajo del formulario -->
+                            <form method="post" action="{% url 'gestionar_notas' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="nota_id_a_eliminar" value="{{ nota.id }}">
+                                <button type="submit" class="eliminar-boton">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+        {% endblock %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- ... tu código posterior ... -->
+
+    <!-- Barra de contacto y redes sociales -->
+    <div class="barra-contacto">
+        <div>Contacto: ejemplo@correo.com | Teléfono: +123 456 7890</div>
+        <div>Nuestras Redes Sociales:
+             <a href="#" class="red-social"><img src="/static/imagenes/face.png" alt="Facebook"></a>
+             <a href="#" class="red-social"><img src="/static/imagenes/x.png" alt="Twitter"></a>
+             <a href="#" class="red-social"><img src="/static/imagenes/insta.png" alt="Instagram"></a>
+        </div>
+    </div>
+</body>
+
+</html>

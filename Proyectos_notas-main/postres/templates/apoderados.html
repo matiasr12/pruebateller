@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Perfil del Apoderado</title>
+    <style>
+        /* Estilos para los botones del perfil del apoderado */
+        .botones-apoderado {
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(0, 123, 255, 0.5); /* Color azul transparente */
+            padding: 20px; /* Añade padding para mejorar el espaciado */
+        }
+
+        .botones-apoderado a {
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .botones-apoderado button {
+            padding: 0; /* Elimina el relleno para que no haya fondo visible */
+            color: white; /* Cambiado el color del texto a blanco */
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease; /* Transición para el color del texto */
+            display: flex;
+            flex-direction: column; /* Alinea el contenido en columna */
+            align-items: center;
+            background: none; /* Elimina cualquier fondo adicional */
+        }
+
+        .botones-apoderado button img {
+            max-width: 30px;
+            max-height: 30px;
+        }
+
+        .botones-apoderado button span {
+            margin-top: 5px; /* Añadido margen superior para separar la imagen y el texto */
+        }
+
+        .botones-apoderado button:hover {
+            color: #0056b3; /* Cambiado el color del texto al pasar el ratón */
+        }
+
+        /* Otros estilos (copiados desde tu CSS original) */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3d32321f;
+        }
+
+        ul.navbar li {
+            float: right;
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #444;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/imagenes/img2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .barra-contacto {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre los elementos */
+        }
+
+        /* Estilos para los iconos de redes sociales */
+        .red-social img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px; /* Añadido margen derecho para separar las imágenes */
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="navbar">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Home</a></li>
+    </ul>
+
+    <h1>Perfil del Apoderado</h1>
+    <br><br><br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Botones del perfil del apoderado -->
+    <div class="botones-apoderado">
+        <a href="{% url 'notasprofe' %}">
+            <button>
+                <img src="/static/imagenes/a.png" alt="Notas">
+                <span>Notas</span>
+            </button>
+        </a>
+        <a href="{% url 'anotacionesapode' %}">
+            <button>
+                <img src="/static/imagenes/Captura1.png" alt="Anotaciones">
+                <span>Anotaciones</span>
+            </button>
+        </a>
+        <a href="{% url 'actividades1' %}">
+            <button>
+                <img src="/static/imagenes/Captura3.png" alt="Asuntos Estudiantiles">
+                <span>Asuntos Estudiantiles</span>
+            </button>
+        </a>
+    </div>
+
+    <!-- Contenido del perfil del apoderado -->
+
+    <!-- Barra de contacto y redes sociales -->
+    <div class="barra-contacto">
+        <div>Contacto: ejemplo@correo.com | Teléfono: +123 456 7890</div>
+        <div>Nuestras Redes Sociales:
+            <a href="#" class="red-social"><img src="/static/imagenes/face.png" alt="Facebook"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/x.png" alt="Twitter"></a>
+            <a href="#" class="red-social"><img src="/static/imagenes/insta.png" alt="Instagram"></a>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>

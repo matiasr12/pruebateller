@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Nota</title>
+</head>
+<body>
+    <h1>Editar Nota</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="nueva_apoderado_id">Apoderado:</label>
+        <input type="text" id="nueva_apoderado_id" name="nueva_apoderado_id" value="{{ apoderado_info.nombreap }} {{ apoderado_info.apellidoap }}" readonly>
+        
+        <label for="nueva_asignatura_id">Asignatura:</label>
+        <input type="text" id="nueva_asignatura_id" name="nueva_asignatura_id" value="{{ asignatura_info.nombre_asignatura }}" readonly>
+        
+        <label for="nueva_curso_id">Curso:</label>
+        <input type="text" id="nueva_curso_id" name="nueva_curso_id" value="{{ curso_info.nombre_curso }}" readonly>
+        
+        <label for="nueva_nota">Nota:</label>
+        <input type="text" id="nueva_nota" name="nueva_nota" value="{{ nota_data.nota }}">
+        
+        <label for="nueva_usuario_id">Usuario:</label>
+        <input type="text" id="nueva_usuario_id" name="nueva_usuario_id" value="{{ usuario_info.first_name }} {{ usuario_info.last_name }}" readonly>
+        
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>

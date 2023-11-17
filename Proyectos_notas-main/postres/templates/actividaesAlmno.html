@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notas</title>
+    <style>
+        /* Estilos CSS para dar formato a la barra de navegación */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #3d32321f; /* Color de fondo de la barra de navegación */
+        }
+
+        ul.navbar li {
+            float: right; /* Cambiado a float: right para alinear a la derecha */
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #444; /* Color de fondo al pasar el cursor por encima del enlace */
+        }
+
+        /* Estilos para el cuerpo de la página con imagen de fondo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/imagenes/img2.jpg'); /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white; /* Color del texto en la parte superior de la imagen de fondo */
+        }
+        .container {
+    text-align: center; /* Center-align the text content */
+    margin: auto; /* Set auto margin to center the container horizontally */
+    max-width: 600px; /* Optionally set a maximum width for better readability */
+}
+
+.container h1 {
+    color: #fff; /* Set the color for the heading to white */
+}
+
+.container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container li {
+    background-color: #f2f2f2; /* Set a background color for list items */
+    margin: 10px 0; /* Add margin to create space between list items */
+    padding: 10px; /* Add padding for better spacing within list items */
+}
+
+.container a {
+    color: #007bff; /* Set the color for the links */
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline; /* Add underline on hover for better visual feedback */
+}
+
+        
+
+   
+
+      
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+        <li><a href="#">Contacto</a></li>
+        <li><a href="{% url 'alumno' %}">Home</a></li>
+    </ul>
+
+
+    <div class="container">
+    
+        <h1>Lista de Actividades de Alumno</h1>
+        <i>  <ul>
+            {% for archivo in archivos %}
+                <li>
+                    <p>{{ archivo.nombre_actividad }}</p>
+                    <a href="{{ archivo.url }}" target="_blank">Descargar actividad</a>
+                </li>
+            {% endfor %}
+        </ul></i>
+    
+    </div>
+
+ 
+
+</body>
+</html>
+
+
+
